@@ -1,0 +1,187 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em 20px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para alinear los elementos de la lista horizontalmente */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.hero {
+    background-image: url('imagen-hero.jpg'); /* Reemplaza con tu imagen */
+    background-size: cover;
+    background-position: center; /* Centra la imagen */
+    color: white;
+    text-align: center;
+    padding: 100px 20px; /* Añadido padding lateral para pantallas pequeñas */
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    color: white;
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="month"],
+input[type="tel"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.excursion-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.excursion-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.advertencia-pago {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+/* --- MEDIA QUERIES PARA RESPONSIVE DESIGN --- */
+
+/* Para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Apila el logo y la navegación verticalmente */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+        padding: 1em;
+    }
+
+    nav ul {
+        flex-direction: column; /* Apila los enlaces de navegación verticalmente */
+        width: 100%; /* Ocupa todo el ancho */
+        margin-top: 1em;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .excursion-list {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+}
+
+/* Para tabletas (tamaño intermedio) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    nav ul {
+        /* Puede mantener la alineación horizontal o ajustarla */
+        justify-content: center; /* Centra los enlaces en tabletas */
+    }
+
+    .excursion-list {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Ajusta el ancho mínimo */
+    }
+}

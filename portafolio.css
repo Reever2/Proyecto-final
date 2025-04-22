@@ -1,0 +1,351 @@
+/* style.css */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* Fondo general gris oscuro */
+    color: #fff; /* Texto blanco general */
+}
+
+header {
+    background-color: #222; /* Fondo del header negro */
+    color: #fff;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5em;
+    color: #aaff80; /* Nombre en verde claro */
+}
+
+nav {
+    display: block; /* Asegurar que nav esté presente en el DOM */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1.5em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #aaff80; /* Hover en verde claro */
+}
+
+.projects-menu {
+    position: relative;
+}
+
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #444; /* Fondo del submenu gris más claro */
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    display: none; /* Oculto por defecto en escritorio */
+    flex-direction: column;
+}
+
+.submenu li {
+    margin: 0;
+}
+
+.submenu li a {
+    display: block;
+    padding: 0.8em 1.5em;
+    text-align: center;
+}
+
+.submenu li a:hover {
+    background-color: #555;
+}
+
+.section {
+    padding: 80px 2em;
+    background-color: #f0f0f0; /* Fondo de las secciones blanco */
+    color: #333; /* Texto negro en las secciones */
+    scroll-margin-top: 60px; /* Espacio para no ocultar el contenido con el header fijo */
+}
+
+.section#sobre-mi {
+    background-color: #eee;
+}
+
+.section#curriculum {
+    background-color: #ddd;
+}
+
+.section#proyectos {
+    display: none; /* Oculto en escritorio */
+    background-color: #eee;
+    text-align: center;
+}
+
+.section#proyectos .mobile-submenu {
+    list-style: none;
+    padding: 0;
+}
+
+.section#proyectos .mobile-submenu li {
+    margin-bottom: 1em;
+}
+
+.section#proyectos .mobile-submenu a {
+    display: inline-block;
+    padding: 0.8em 1.5em;
+    background-color: #aaff80; /* Botones del submenu móvil en verde claro */
+    color: #222;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.section#proyectos .mobile-submenu a:hover {
+    background-color: #88cc60;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#sobre-mi .container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background-color: #fff; /* Fondo del cuadro sobre mí blanco */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    flex: 0 0 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-image img {
+    width: 110%;
+    height: auto;
+    display: block;
+}
+
+.personal-info {
+    flex: 1;
+}
+
+#curriculum .container {
+    background-color: #fff; /* Fondo del cuadro currículum blanco */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.education, .experience {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.study-item, .experience-item {
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #222; /* Fondo del footer negro */
+    color: #fff;
+    text-align: center;
+    padding: 2em 2em 0em 2em;
+    position: relative;
+}
+
+.back-to-top {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #aaff80; /* Fondo de la flecha verde claro */
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.back-to-top a {
+    display: block;
+}
+
+.back-to-top img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row; /* Volver a la disposición en fila para logo y botón */
+        justify-content: space-between;
+    }
+
+    .mobile-menu-button {
+        display: block; /* Mostrar el botón de menú en móviles */
+        background: none;
+        color: #fff;
+        border: none;
+        font-size: 1.2em;
+        cursor: pointer;
+        padding: 0.5em;
+    }
+
+    nav {
+        display: none; /* Ocultar el menú principal en móviles inicialmente */
+        width: 100%;
+        background-color: #333; /* Fondo del menú desplegable */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 99; /* Asegurar que esté por encima del contenido */
+    }
+
+    nav.open {
+        display: block; /* Mostrar el menú cuando la clase 'open' está presente */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav ul li {
+        margin: 0;
+        border-bottom: 1px solid #444;
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.8em 1.5em;
+        text-align: left;
+    }
+
+    .submenu {
+        position: static; /* Cambiar a static para que se despliegue dentro del flujo */
+        display: none !important; /* Ocultar el submenu desplegable al inicio en móvil */
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+        box-shadow: none;
+        background-color: #444;
+    }
+
+    .projects-menu.open-submenu .submenu {
+        display: flex !important; /* Mostrar el submenu cuando la clase 'open-submenu' está presente */
+    }
+
+    .submenu li a {
+        padding-left: 2.5em; /* Indentar los elementos del submenu */
+    }
+
+    #sobre-mi .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-image {
+        margin-bottom: 20px;
+    }
+
+    #curriculum .container {
+        flex-direction: column;
+    }
+
+    .section#proyectos {
+        display: block; /* Mostrar la sección de proyectos en móvil */
+    }
+
+    .main-menu .projects-menu > a {
+        display: block; /* Mostrar el botón "Proyectos" del menú principal en móvil */
+    }
+
+    .back-to-top {
+        top: auto;
+        bottom: 20px;
+    }
+}
+
+/* Estilos para escritorio (revertir los cambios específicos de móvil) */
+@media (min-width: 769px) {
+    .mobile-menu-button {
+        display: none; /* Ocultar el botón de menú en escritorio */
+    }
+
+    nav {
+        display: block; /* Mostrar el menú principal en escritorio */
+        width: auto;
+        position: static;
+        background-color: transparent;
+    }
+
+    nav ul {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-left: 1.5em;
+        border-bottom: none;
+    }
+
+    .submenu {
+        display: none !important; /* Ocultar el submenu por defecto en escritorio */
+        position: absolute;
+        top: 100%;
+        right: 0;
+        flex-direction: column;
+        width: auto;
+        text-align: right;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        background-color: #444;
+    }
+
+    .projects-menu:hover .submenu {
+        display: flex !important; /* Mostrar el submenu al pasar el ratón en escritorio */
+    }
+
+    .section#proyectos {
+        display: none; /* Ocultar la sección de proyectos en escritorio */
+    }
+
+    .main-menu .projects-menu > a {
+        display: block; /* Asegurar que el enlace "Proyectos" se muestre en el menú principal */
+    }
+}

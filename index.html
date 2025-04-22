@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubre la República Dominicana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Descubre la República Dominicana</h1>
+        <nav>
+            <ul>
+                <li><a href="#crear-excursion">Crea tu Excursión</a></li>
+                <li><a href="#excursiones-populares">Excursiones Populares</a></li>
+                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h2>Explora cada rincón de nuestra isla.</h2>
+                <p>Crea tu aventura personalizada o únete a un grupo y vive experiencias inolvidables.</p>
+                <a href="#crear-excursion" class="button">¡Comienza ahora!</a>
+            </div>
+        </section>
+
+        <section id="crear-excursion">
+            <h2>Crea tu Excursión</h2>
+            <form id="form-crear-excursion">
+                <div class="form-group">
+                    <label for="destino">Destino:</label>
+                    <select id="destino" name="destino">
+                        <option value="">Selecciona una provincia</option>
+                        <option value="la-romana">La Romana</option>
+                        <option value="punta-cana">Punta Cana</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo de Excursión:</label>
+                    <select id="tipo" name="tipo">
+                        <option value="privada">Privada</option>
+                        <option value="compartida">Compartida</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha Deseada:</label>
+                    <input type="date" id="fecha" name="fecha">
+                </div>
+                <div class="form-group">
+                    <label for="personas">Número de Personas:</label>
+                    <input type="number" id="personas" name="personas" min="1" value="1">
+                </div>
+                <div class="form-group">
+                    <h3>Servicios Adicionales (Opcional)</h3>
+                    <label><input type="checkbox" name="transporte" value="transporte"> Transporte (con costo adicional)</label><br>
+                    <label><input type="checkbox" name="alojamiento" value="alojamiento"> Alojamiento (con costo adicional)</label><br>
+                    <label><input type="checkbox" name="almuerzo" value="almuerzo"> Almuerzo Buffet (con costo adicional)</label><br>
+                    <label><input type="checkbox" name="guia" value="guia"> Guía Turístico (con costo adicional)</label><br>
+                </div>
+                <button type="button" onclick="mostrarOpcionesPago()">Continuar al Pago</button>
+            </form>
+        </section>
+
+        <section id="excursiones-populares">
+            <h2>Excursiones Populares</h2>
+            <div class="excursion-list">
+                <div class="excursion-card">
+                    <h3>Aventura en Isla Saona</h3>
+                    <p>Fecha: 25 de Mayo de 2025</p>
+                    <p>Precio por persona: $75 USD</p>
+                    <p>Lugares disponibles: 8/12</p>
+                    <button class="button" onclick="mostrarPagoExcursionPopular('Isla Saona', 75)">Unirse</button>
+                </div>
+                </div>
+                <div class="excursion-list">
+                    <div class="excursion-card">
+                        <h3>La zona colonial</h3>
+                        <p>Fecha: 25 de Mayo de 2025</p>
+                        <p>Precio por persona: $75 USD</p>
+                        <p>Lugares disponibles: 8/12</p>
+                        <button class="button" onclick="mostrarPagoExcursionPopular('Zona Colonial', 75)">Unirse</button>
+                    </div>
+                    </div>
+        </section>
+
+        <section id="pago" style="display:none;">
+            <h2>Pago de tu Excursión</h2>
+            <div id="resumen-pedido">
+                </div>
+            <div class="payment-info">
+                <h3>Información del Solicitante</h3>
+                <form id="form-solicitante">
+                    <div class="form-group">
+                        <label for="nombre-solicitante">Nombre Completo del Solicitante:</label>
+                        <input type="text" id="nombre-solicitante" name="nombre-solicitante" required>
+                    </div>
+                </form>
+                <h3>Información de Pago</h3>
+                <p class="advertencia-pago"><strong>Importante:</strong> Una vez confirmado el pago, no se realizarán reembolsos. Las cancelaciones deben realizarse con un mínimo de 10 días de anticipación para ser elegibles para un reembolso completo. En caso contrario, la devolución total del pago no será posible.</p>
+                <form id="form-pago">
+                    <div class="form-group">
+                        <label for="nombre-tarjeta">Nombre en la Tarjeta:</label>
+                        <input type="text" id="nombre-tarjeta" name="nombre-tarjeta" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tarjeta">Número de Tarjeta:</label>
+                        <input type="text" id="tarjeta" name="tarjeta" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vencimiento">Fecha de Vencimiento:</label>
+                        <input type="month" id="vencimiento" name="vencimiento" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="XXX" required>
+                    </div>
+                    <button type="button" onclick="validarPago()">Pagar Ahora</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="sobre-nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>Somos una empresa apasionada por mostrar la belleza y diversidad de la República Dominicana...</p>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>¡Contáctanos para cualquier consulta!</p>
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Descubre RD</p> 
+        <a href="portafolio.html" class="button" target="_blank">Volver al Portafolio</a>
+    </footer>
+
+    <script src="js.js"></script>
+</body>
+</html>
